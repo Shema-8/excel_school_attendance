@@ -1,0 +1,14 @@
+<link rel="stylesheet" href="/static/style.css">
+<h2>Class Attendance</h2>
+
+<form method="post">
+{% for s in students %}
+  <div class="student-card">
+    <b>{{ s[1] }}</b><br>
+    <label><input type="radio" name="status_{{ s[0] }}" value="Present" required> Present</label>
+    <label><input type="radio" name="status_{{ s[0] }}" value="Absent"> Absent</label>
+    <label><input type="radio" name="status_{{ s[0] }}" value="Late"> Late</label>
+  </div>
+{% endfor %}
+<button class="btn-blue">Submit Attendance</button>
+</form>
