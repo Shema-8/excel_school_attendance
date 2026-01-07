@@ -1,0 +1,45 @@
+-- USERS
+CREATE TABLE users (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    full_name TEXT,
+    email TEXT,
+    password TEXT,
+    role TEXT
+);
+
+-- CLASSES
+CREATE TABLE classes (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    class_name TEXT,
+    teacher_id INTEGER
+);
+
+-- STUDENTS
+CREATE TABLE students (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    full_name TEXT,
+    registration_number TEXT,
+    class_id INTEGER,
+    parent_phone TEXT,
+    status TEXT
+);
+
+-- ATTENDANCE
+CREATE TABLE attendance (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    student_id INTEGER,
+    class_id INTEGER,
+    date TEXT,
+    status TEXT,
+    teacher_id INTEGER,
+    time_marked TEXT
+);
+
+-- ABSENT RECORDS
+CREATE TABLE absent_records (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    date TEXT,
+    class_id INTEGER,
+    student_id INTEGER,
+    teacher_id INTEGER
+);
