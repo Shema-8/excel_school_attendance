@@ -1,0 +1,19 @@
+<link rel="stylesheet" href="/static/style.css">
+
+<h2>School Summary (Today)</h2>
+
+<div class="summary-box">
+{% for s in summary %}
+  <p>{{ s[0] }}: {{ s[1] }}</p>
+{% endfor %}
+</div>
+
+<h3>Absent Students</h3>
+<table>
+<tr><th>Name</th><th>Class</th></tr>
+{% for a in absentees %}
+<tr><td>{{ a[0] }}</td><td>{{ a[1] }}</td></tr>
+{% endfor %}
+</table>
+
+<a href="/confirm_sms" class="btn-red">Confirm & Send SMS</a>
